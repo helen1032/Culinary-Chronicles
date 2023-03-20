@@ -21,8 +21,8 @@ Technology Stack:
 
 Team Members:
 
-GIselle Cabrejos
-Helen Cardoso
-Ben Domeier
-Andrea Martinez
+GIselle Cabrejos,
+Helen Cardoso,
+Ben Domeier,
+Andrea Martinez,
 Tyahna Tate
