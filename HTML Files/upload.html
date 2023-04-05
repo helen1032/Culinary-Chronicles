@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Culinary Chronicles</title>
-    <link href="/Group-13---Final/CSS Files/default.css" rel="stylesheet" type="text/css">
+    <link href="/FinalProject/Group-13---Final/CSS Files/default.css" rel="stylesheet" type="text/css">
+    <link href="/FinalProject/Group-13---Final/CSS Files/upload.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="header">
@@ -21,6 +22,10 @@
         <div class="left-column">
             <h3>Add A Recipe</h3>
             <form>
+                <label for="recipe-category">Category:</label>
+                <input type="text" id="recipe-category" required>
+                <br />
+
                 <label for="recipe-name">Name:</label>
                 <input type="text" id="recipe-name" required>
                 <br />
@@ -41,6 +46,6 @@
             <div id="no-recipes">You have no recipes.</div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="/FinalProject/Group-13---Final/JS Files/script.js"></script>
 </body>
 </html>
