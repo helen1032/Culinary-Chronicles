@@ -1,5 +1,4 @@
 # Culinary Chronicles
-## Introduction:
 We are creating a recipe sharing website. A recipe sharing website is a platform that enables users to share, search, 
 and discover new recipes. It provides a digital space for people to exchange culinary ideas and explore different cuisines. 
 A recipe sharing website will allow users to upload their own recipes and browse through a variety of recipes.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Culinary Chronicles</title>
+  <link href="/Group-13---Final/CSS Files/upload.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <h1>Culinary Chronicles</h1>
+    </div>
+
+    <ul class="nav">
+        <li><a href="/Group-13---Final/HTML Files/toc.html">Table of Contents</a></li>
+        <li><a href="/Group-13---Final/HTML Files/categories.html">Categories</a></li>>
+        <li><a href="/Group-13---Final/HTML Files/upload.html">Add a Recipe</a></li>
+        <li><a href="/Group-13---Final/HTML Files/contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="left-column">
+            <h3>Add A Recipe</h3>
+            <form>
+                <label for="recipe-name">Name:</label>
+                <input type="text" id="recipe-name" required>
+                <br />
+
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea id="recipe-ingredients" rows="5 required"></textarea>
+                <br />
+
+                <label for="recipe-method">Method:</label>
+                <textarea id="recipe-method" rows="5" required></textarea>
+                <br />
+
+                <button type="submit">Add Recipe</button>
+            </form>
+        </div>
+        <div class="right-colum">
+            <div id="recipe-list"></div>
+            <div id="no-recipes">You have no recipes.</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
