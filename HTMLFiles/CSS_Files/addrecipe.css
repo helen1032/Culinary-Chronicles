@@ -1,0 +1,314 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+  
+  :root{
+    --main-color: #85A392;
+    --hover-color: #8dad9b;
+    --text-color: #F5B971;
+    --other-color: #fff8eb;
+    --second-color: #f2cd7c;
+    --bg-color: #ffffff;
+  
+    --big-font: 4.3rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+  
+  }
+  
+  body{
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;  
+    padding: 30px 14%;
+    transition: all .50s ease;
+  }
+  
+  header.sticky{
+    padding: 14px 14%;
+    background: var(--other-color);
+  }
+  
+  footer{
+    background: var(--other-color);
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+  }
+  
+  .footer-content{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3rem;
+  }
+  
+  .footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+  }
+  
+  .socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+  }
+  
+  .socials li{
+    margin: 0 10px;
+  }
+  
+  .socials a{
+    text-decoration: none;
+    color: var(--main-color);
+  }
+  
+  .socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+  }
+  
+  .socials a:hover i{
+    color: #F5B971;
+  }
+  
+  .footer-bottom{
+    background: #fff8eb;
+    width: 100vmm;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+  }
+  
+  .footer-bottom span{
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+  .logo{
+    display: flex;
+    align-items:center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700;
+  }
+  
+  .logo i{
+    vertical-align: middle;
+    margin-right: 8px;
+    color: var(--main-color);
+  
+  }
+  
+  .navlist{
+    display: flex;
+  }
+  
+  .navlist a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 30px;
+    transition: all .50s ease;
+  }
+  
+  .navlist a:hover{
+    color:var(--main-color);
+  }
+  
+  .navlist a.active{
+    color:var(--main-color);
+  }
+  
+
+  /**********************Submition section*********************/
+
+.subtitle h1{
+    display: flex;
+    align-items:center;
+    vertical-align: middle;
+    margin-right: 8px;
+    top: 0;
+    right: 0;
+    
+  }
+
+  .submit-recipe{
+    width: 60%;
+    padding: 40px;
+    background: var(--second-color);
+  }
+
+  .inputBox{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+  }
+
+  .submit-recipe .inputBox span{
+    padding: 5px 10;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+  }
+
+  .submit-recipe .inputBox input[type="submit"]{
+    width: 100px;
+    background: var(--main-color);
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .submission{
+    padding: 10px 14% 30px;
+  }
+
+  .box{
+    width: 650px;
+    height: 150px;
+    resize: none;
+  }
+
+  .subtitle h2{
+    font-size: var(--h2-font);
+    padding: 200px 14% 30px;
+  }
+
+  .subtitle p{
+    font-size: 30px;
+    padding: 0px 14%;
+  }
+
+  .inputBox h2{
+    color: var(--main-color);
+  }
+
+  .submit-recipe span{
+    color: var(--main-color);
+    font-size: 18px;
+  }
+
+  .submit-recipe h2{
+    color: var(--main-color);
+  }
+
+  #custom-button{
+    width: 100px;
+    background: var(--main-color);
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+ #custom-button:hover{
+  background-color: var(--hover-color);
+ }
+
+ #custom-text{
+  color: white;
+  margin-left: 10px;
+
+ }
+
+ .popup{
+  width: 400px;
+  background: var(--other-color);
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+ }
+
+ .popup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+ }
+
+ .popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+ }
+
+ .popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background-color: var(--main-color);
+  color: white;
+  border: 0;
+  outline:none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+
+ }
+
+ .open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+ }
+
+ .submitBtn{
+    width: 100px;
+    background: var(--main-color);
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+  }
+ 
