@@ -1,20 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Culinary Chronicles</title>
-    <link href="/CSS_Files/default.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div class="header">
-        <h1>Culinary Chronicles</h1>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Culinary Chronicles</title>
+        <link href="./CSS_Files/default.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
 
-    <ul class="nav">
-        <li><a href="/HTMLFiles/toc.html">Table of Contents</a></li>
-        <li><a href="/HTMLFiles/categories.html">Categories</a></li>>
-        <li><a href="/HTMLFiles/upload.html">Add a Recipe</a></li>
-        <li><a href="/HTMLFiles/contact.html">Contact Us</a></li>
-    </ul>
-</body>
+        <!--- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+
+        <!----header---->
+        <header>
+            <a href="#" class="logo"><i class='bx bxs-food-menu'></i>Culinary Chronicles</a>
+            <!-- nav -->
+            <ul class="navlist">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="toc.html">Table of Contents</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="upload.html">Add a Recipe</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </header>
+
+        <!---home--->
+        <section class="home" id="home">
+            <div class="home-text">
+                <h1>Share, <span>Explore &</span> <br> Enjoy the true </br> taste</h1>
+                <a href="#" class="btn"><i class='bx bxs-right-arrow'></i> Explore the Recpies</a>
+            </div>
+
+            <div class="home-img">
+                <img src="images/home1.avif">
+            </div>
+        </section>
+
+        <!---about us--->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="images/2.jpg">
+            </div>
+
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Welcome to our recipe sharing website! Our platform is a community-driven 
+                    space for food lovers to share their favorite recipes, cooking tips, and culinary 
+                    experiences with others. Our mission is to inspire and connect people through the 
+                    joy of cooking and sharing food.
+                    <br></br>
+                    Our website is designed to be user-friendly, with a simple and intuitive interface 
+                    that allows users to easily browse and search for recipes based on their preferences and 
+                    dietary needs. Whether you're looking for a quick and easy weeknight dinner, a fancy meal to 
+                    impress your guests, or a healthy and nutritious snack, you'll find a wide range of recipes 
+                    to choose from on our site.
+                    <br></br>
+                    We believe that cooking should be accessible to everyone, regardless of their skill level or 
+                    background. That's why our community is open to everyone, from seasoned chefs to beginners 
+                    just starting out in the kitchen. We encourage our users to share their own unique perspectives 
+                    and approaches to cooking, and to learn from each other in a supportive and welcoming environment.
+                    We hope you'll join us in this culinary journey and share your own delicious creations with our community!
+                    </p>
+            </div>
+        </section>
+
+        <!---footer--->
+        <footer>
+            <div class="footer-content">
+                <h3>Presented to you by Group 13</h3>
+                <p>Discover your inner chef with our recipe-sharing community!</p>
+                <ul class="socials">
+                    <li><a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                    <li><a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <li><a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy;2023 Group 13. designed by <span>Group 13</span></p>
+            </div>
+        </footer>
+
+        <!--java script-->
+        <script src="./JavaScript/script.js"></script>
+    </body>
 </html>

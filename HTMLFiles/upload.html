@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Culinary Chronicles</title>
-    <link href="/CSS_Files/default.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div class="header">
-        <h1>Culinary Chronicles</h1>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Culinary Chronicles</title>
+        <link href="./CSS_Files/default.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
 
-    <ul class="nav">
-        <li><a href="/HTMLFiles/toc.html">Table of Contents</a></li>
-        <li><a href="/HTMLFiles/categories.html">Categories</a></li>>
-        <li><a href="/HTMLFiles/upload.html">Add a Recipe</a></li>
-        <li><a href="/HTMLFiles/contact.html">Contact Us</a></li>
-    </ul>
+        <!--- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
 
-    <div class="container">
-        <div class="left-column">
-            <h3>Add A Recipe</h3>
-            <form>
-                <label for="recipe-name">Name:</label>
-                <input type="text" id="recipe-name" required>
-                <br />
+        <!----header---->
+        <header>
+            <a href="#" class="logo"><i class='bx bxs-food-menu'></i>Culinary Chronicles</a>
+            <!-- nav -->
+            <ul class="navlist">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="toc.html">Table of Contents</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="upload.html" class="active">Add a Recipe</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </header>
 
-                <label for="recipe-ingredients">Ingredients:</label>
-                <textarea id="recipe-ingredients" rows="5 required"></textarea>
-                <br />
 
-                <label for="recipe-method">Method:</label>
-                <textarea id="recipe-method" rows="5" required></textarea>
-                <br />
 
-                <button type="submit">Add Recipe</button>
-            </form>
+
+    <!---footer--->
+    <footer>
+        <div class="footer-content">
+            <h3>Presented to you by Group 13</h3>
+            <p>Discover your inner chef with our recipe-sharing community!</p>
+            <ul class="socials">
+                <li><a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                <li><a href="#"><i class='bx bxl-twitter' ></i></a>
+                <li><a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+            </ul>
         </div>
-        <div class="right-colum">
-            <div id="recipe-list"></div>
-            <div id="no-recipes">You have no recipes.</div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2023 Group 13. designed by <span>Group 13</span></p>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </footer>
+
+    <!--java script-->
+    <script src="./JavaScript/script.js"></script>
 </body>
 </html>
