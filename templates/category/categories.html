@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Culinary Chronicles</title>
 
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
   <!-- Bootstrap CSS -->
@@ -24,23 +24,23 @@
     <!-- As a heading -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">Culinary Chronicles</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
-              <a class="nav-link disabled" aria-current="page" href="./index.html">Home</a>
+              <a class="nav-link disabled" aria-current="page" href="{{ url_for('index') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./categories.html" tabindex="-1" aria-disabled="false">Categories</a>
+              <a class="nav-link active" href="{{ url_for('category') }}" tabindex="-1" aria-disabled="false">Categories</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="./addRecipe.html" tabindex="-1" aria-disabled="true">Add a Recipe</a>
+              <a class="nav-link disabled" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="true">Add a Recipe</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="./contactUs.html" tabindex="-1" aria-disabled="true">Contact Us</a>
+              <a class="nav-link disabled" href="{{ url_for('contact') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
             </li>
           </ul>
         </div>
