@@ -1,96 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Culinary Chronicles</title>
-        <link href="./CSS_Files/categories.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    
+<head>
+  <meta charset="UTF-8">
+  <title>Culinary Chronicles</title>
 
-        <!--- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    </head>
-    <body>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-        <!----header---->
-        <header>
-            <a href="#" class="logo"><i class='bx bxs-food-menu'></i>Culinary Chronicles</a>
-            <!-- nav -->
-            <ul class="navlist">
-                <li><a href="home.html" >Home</a></li>
-                <li><a href="toc.html">Table of Contents</a></li>
-                <li><a href="categories.html" class="active">Categories</a></li>
-                <li><a href="upload.html">Add a Recipe</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </header>
-
-
-        <section class="about" id="about">
-            <div class="about-text">
-                <h2>Please Select One of the Categories</h2>
-            </div>
-        </section>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 
+</head>
+<body>
 
 
-        <!--Categories-->
-        <table class="cat-table">
-            <tr>
-                <td>
-                    <div class="div1">
-                        <img src="./images/breakfast.svg">
-                        <button class="cat-btn btn1">Breakfast</button>
-                        <br></br>
-                    </div>
-                </td>
-                <td>
-                    <div class="div1">
-                        <img src="./images/lunch.svg">
-                        <button class="cat-btn btn1">Lunch</button>
-                        <br></br>
-                    </div>
-                </td>
-                <td>
-                    <div class="div1">
-                        <img src="./images/dinner.svg">
-                        <button class="cat-btn btn1">Dinner</button>
-                        <br></br>
-                    </div>
-                </td>
-                <td>
-                    <div class="div1">
-                        <img src="./images/dessert.svg">
-                        <button class="cat-btn btn1">Dessert</button>
-                        <br></br>
-                    </div>
-                </td>
-            </tr>
-        </table>
- 
 
-        <!---footer--->
-        <footer>
-            <div class="footer-content">
-                <h3>Presented to you by Group 13</h3>
-                <p>Discover your inner chef with our recipe-sharing community!</p>
-                <ul class="socials">
-                    <li><a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-                    <li><a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <li><a href="#"><i class='bx bxl-instagram-alt' ></i></a>
-                </ul>
-            </div>
-            <div class="footer-bottom">
-                <p>copyright &copy;2023 Group 13. designed by <span>Group 13</span></p>
-            </div>
-        </footer>
-        <script src="./JavaScript/script.js"></script>
+    <!-- As a heading -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">Culinary Chronicles</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./categories.html" tabindex="-1" aria-disabled="false">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="./addRecipe.html" tabindex="-1" aria-disabled="true">Add a Recipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="./contactUs.html" tabindex="-1" aria-disabled="true">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+
+  <div class="container mt-5">
+    <h1>Product List</h1>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="searchInput" placeholder="Search for products">
+      </div>
+    </form>
+    <ul class="list-group" id="productList">
+      <li class="list-group-item">
+        <div class="media">
+          <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+          <div class="media-body">
+            <h5 class="mt-0">Product 1</h5>
+            <p class="mb-0">$20.00</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="media">
+          <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+          <div class="media-body">
+            <h5 class="mt-0">Product 2</h5>
+            <p class="mb-0">$25.00</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="media">
+          <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+          <div class="media-body">
+            <h5 class="mt-0">Product 3</h5>
+            <p class="mb-0">$30.00</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+    <div class="media">
+        <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+        <div class="media-body">
+            <h5 class="mt-0">Product 3</h5>
+            <p class="mb-0">$30.00</p>
+        </div>
+    </div>
+</li>
+<li class="list-group-item">
+    <div class="media">
+        <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+        <div class="media-body">
+            <h5 class="mt-0">Product 4</h5>
+            <p class="mb-0">$15.00</p>
+        </div>
+    </div>
+</li>
+<li class="list-group-item">
+    <div class="media">
+        <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+        <div class="media-body">
+            <h5 class="mt-0">Product 5</h5>
+            <p class="mb-0">$40.00</p>
+        </div>
+    </div>
+</li>
+<li class="list-group-item">
+    <div class="media">
+        <img src="https://via.placeholder.com/150x150" class="mr-3" alt="Product Thumbnail">
+        <div class="media-body">
+            <h5 class="mt-0">Product 6</h5>
+            <p class="mb-0">$50.00</p>
+        </div>
+    </div>
+</li>
+</ul>
+</div>
+  
+<script>
+// Search functionality
+$(document).ready(function(){
+    $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#productList li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+</script>
 </body>
 </html>
+
+       
