@@ -52,7 +52,7 @@
       </nav>
 
     <div class="container mt-5">
-        <h1>Product List</h1>
+        <h1>Recipe List</h1>
         <div class="row mt-3">
             <div class="col-md-12">
                 <table class="table">
@@ -63,7 +63,6 @@
                             <th>Serving(s)</th>
                             <th>Ingredients</th>
                             <th>Directions</th>
-                            <th>Picture</th>
                             <th>Options</th>
                         </tr>
                     </thead>
@@ -77,10 +76,10 @@
                         <td>{{ breakfast.directions }}</td>
                         <td>
                             <a href="{{ url_for('update_breakfast',id=breakfast.id) }}">
-                                <button type="button">Update</button>
+                                <button type="button" class="btn btn-primary">Edit</button>
                             </a>
                             <a href="{{ url_for('delete_breakfast',id=breakfast.id) }}">
-                                <button type="submit">Delete</button>
+                                <button type="submit"class="btn btn-danger">Delete</button>
                             </a>
                         </td>
                     </tr>
@@ -88,7 +87,7 @@
                     </tbody>
                 </table>
                 <a href="{{ url_for('add_breakfast') }}">
-                    <button type="button">Add New Product</button>
+                    <button type="button" class="btn btn-success mb-3">Add New Recipe</button>
                 </a>
             </div>
         </div>

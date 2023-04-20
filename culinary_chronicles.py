@@ -20,13 +20,14 @@ db = SQLAlchemy(app)
 class Breakfast(db.Model):
     __tablename__ = 'breakfasts'
     id = db.Column(db.Integer, primary_key=True)
+    category = db.Column(db.String(50), nullable=False)
     title = db.Column(db.String(100), nullable=False)
     servings = db.Column(db.Integer, nullable=False)
     ingredients = db.Column(db.String(800), nullable=False)
     directions = db.Column(db.String(1000), nullable=False)
 
-    def __init__(self, id, title, servings, ingredients, directions):
-        self.id = id
+    def __init__(self, category, title, servings, ingredients, directions):
+        self.category = category
         self.title = title
         self.servings = servings
         self.ingredients = ingredients
@@ -56,11 +57,11 @@ def contact():
 @app.route('/addrecipe', methods=['GET', 'POST'])
 def add_breakfast():
     if request.method == 'POST':
-        if not request.form['id'] or not request.form['title'] or not request.form['servings'] \
+        if not request.form['category'] or not request.form['title'] or not request.form['servings']\
                 or not request.form['ingredients'] or not request.form['directions']:
             flash('Please enter all the fields', 'error')
         else:
-            breakfast = Breakfast(request.form['id'], request.form['title'], request.form['servings'],
+            breakfast = Breakfast(request.form['category'], request.form['title'], request.form['servings'],
                                   request.form['ingredients'], request.form['directions'])
 
             db.session.add(breakfast)
@@ -74,12 +75,12 @@ def add_breakfast():
 @app.route('/updaterecipe/<int:id>/', methods=['GET', 'POST'])
 def update_breakfast(id):
     if request.method == 'POST':
-        if not request.form['id'] or not request.form['title'] or not request.form['servings'] \
+        if not request.form['category'] or not request.form['title'] or not request.form['servings'] \
                 or not request.form['ingredients'] or not request.form['directions']:
             flash('Please enter all the fields', 'error')
         else:
             breakfast = Breakfast.query.filter_by(id=id).first()
-            breakfast.id = request.form['id']
+            breakfast.category = request.form['category']
             breakfast.title = request.form['title']
             breakfast.servings = request.form['servings']
             breakfast.ingredients = request.form['ingredients']
