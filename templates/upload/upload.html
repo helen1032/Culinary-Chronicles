@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Culinary Chronicles</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <!-- As a heading -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-current="page" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="false">Add a Recipe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-5">
+      <h1>Upload Your Recipe!</h1>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <table class="table">
+              <thead class="thread-dark">
+                 <tr>
+                    <th>Title</th>
+                    <th>Serving(s)</th>
+                    <th>Ingredients</th>
+                    <th>Directions</th>
+                    <th>Category</th>
+                    <th>Photo</th>
+                    <th>Options</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {% for recipe in recipes %}
+                  <tr>
+                    <td>{{ recipe.title }}</td>
+                    <td>{{ recipe.serving_amount }}</td>
+                    <td>{{ recipe.ingredients }}</td>
+                    <td>{{ recipe.directions }}</td>
+                    <td>{{ recipe.category }}</td>
+                    <td>{{ recipe.photo_filename | basename}}</td>
+                    <td>
+                    <a href="{{ url_for('update_recipe', id=recipe.id) }}">
+                      <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                    </a>
+                    <a href="{{ url_for('delete_recipe', id=recipe.id) }}">
+                      <button type="button" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this recipe?')">Delete</button>
+                    </a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+              <a href="{{ url_for('add_recipe')}}">
+              <button type="button" class="btn btn-success mb-3">Add New Recipe</button>
+              </a>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
