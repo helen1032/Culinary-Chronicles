@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
 
-    <meta charset="UTF-8">
-    <title>Culinary Chronicles</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <meta charset="UTF-8">
+        <title>Culinary Chronicles</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- jQuery and Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</head>
+    </head>
     <body>
         <!-- As a heading -->
          <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -49,16 +49,11 @@
             <p>Uploading recipes is very easy! Add your family recipes, your favorites, and share with family, friends, or the community!</p>
             <hr>
             <form method="POST" action="{{ request.path }}" enctype="multipart/form-data">
-
                 <label for="title"><b>Recipe Title:</b></label><br>
-                    <input type="text" id="title" name="title" placeholder="Enter your title here" required><br><br>
-
+                <input type="text" id="title" name="title" placeholder="Enter your title here" required><br><br>
                 <label for="summary"><b>Description:</b></label><br>
-                    <textarea rows="4" class="form-control" id="summary" name="summary" placeholder="Include a short description about your recipe! Share the story behind it or explain what makes it special." ></textarea><br>
-
-
+                <textarea rows="4" class="form-control" id="summary" name="summary" placeholder="Include a short description about your recipe! Share the story behind it or explain what makes it special." ></textarea><br>
                 <hr>
-
 
                 <div class="col-md-7">
                     <div class="row">
@@ -107,10 +102,8 @@
                 <label for="directions"><b>Directions:</b></label><br>
                     <p class="text-muted">Enter one step per line. Explain how to make your recipe, including backing or cooking, oven temperatures, pan sizes, etc...</p>
                     <textarea rows="4" class="form-control" id="directions" name="directions" placeholder="e.g. Preheat oven to 350 degrees..." required></textarea><br>
-
                 <hr>
                 <input class="btn btn-primary btn-sm" type="submit" value="Submit">
-
                 <a href="{{ url_for('upload') }}">
                 <input class="btn btn-danger btn-sm" type="button" value="Cancel" onclick="return confirm('Are you sure you want to cancel?')">
                 </a><br><br>

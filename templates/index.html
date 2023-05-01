@@ -1,76 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Culinary Chronicles</title>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Culinary Chronicles</title>
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- jQuery and Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</head>
-<body>
+    </head>
+    <body>
+        <!-- As a heading -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Meals</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="true">Add a Recipe</a>
+                </li>
 
-      <!-- As a heading -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Meals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="true">Add a Recipe</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
-              </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-      <div class="container mt-1">
-        <header class="py-5 bg-image-full" style="background-image: url(https://source.unsplash.com/wMzx2nBdeng)">
-            <div class="text-center my-5">
-                <h1 class="text-white fs-3 fw-bolder">Welcome to Culinary Chronicles</h1><br>
-
-                  <div class="col text-center">
-                    <a href="{{ url_for('recipe_list') }}" class="btn btn-primary ">Start Exploring!</a>
-                  </div>
-
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
+                </li>
+              </ul>
             </div>
-        </header>
-      <section class="py-5">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <h2>Get inspired for your next meal</h2>
-                        <p class="lead">We believe that food has the power to bring people together and create meaningful connections.</p>
-                        <p class="mb-0">Whether you're a beginner in the kitchen or an experienced cook,
-                            you'll find plenty of inspiration and ideas on our website. From quick and
-                            easy weeknight meals to elaborate dinner party recipes, we've got something
-                            for everyone. Our recipes are carefully curated and tested by our team of
-                            expert chefs to ensure that they are both tasty and reliable.</p>
+          </div>
+        </nav>
+
+        <!--Homescreen Banner-->
+          <div class="container mt-1">
+              <header class="py-5 bg-image-full" style="background-image: url(https://source.unsplash.com/wMzx2nBdeng)">
+                  <div class="text-center my-5">
+                      <h1 class="text-white fs-3 fw-bolder">Welcome to Culinary Chronicles</h1><br>
+                      <div class="col text-center">
+                          <a href="{{ url_for('recipe_list') }}" class="btn btn-primary ">Start Exploring!</a>
+                      </div>
+
+                </div>
+            </header>
+          <!--Intro paragraph-->
+          <section class="py-5">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <h2>Get inspired for your next meal</h2>
+                            <p class="lead">We believe that food has the power to bring people together and create meaningful connections.</p>
+                            <p class="mb-0">Whether you're a beginner in the kitchen or an experienced cook,
+                                you'll find plenty of inspiration and ideas on our website. From quick and
+                                easy weeknight meals to elaborate dinner party recipes, we've got something
+                                for everyone. Our recipes are carefully curated and tested by our team of
+                                expert chefs to ensure that they are both tasty and reliable.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-      </div>
-
-
-
-      </body>
+            </section>
+          </div>
+    </body>
 </html>

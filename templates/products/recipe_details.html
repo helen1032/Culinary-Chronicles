@@ -1,107 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Culinary Chronicles</title>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Culinary Chronicles</title>
+            <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <!-- jQuery and Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</head>
-<body>
+        </head>
+        <body>
+            <!-- As a heading -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="false">Meals</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="true">Add a Recipe</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
 
-      <!-- As a heading -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-current="page" href="{{ url_for('index') }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="false">Meals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="true">Add a Recipe</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
-              </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-        <div class="container mt-5">
-            <h1><b>{{recipe.title}}</b></h1>
-            <p>{{recipe.summary}}</p>
-                <div class="card col-md-7">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h6 class="card-title">Prep Time:</h6>
-                                <p class="card-text">{{recipe.prepTime}} mins</p>
+            <div class="container mt-5">
+                <h1><b>{{recipe.title}}</b></h1>
+                    <p>{{recipe.summary}}</p>
+                        <div class="card col-md-7">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Prep Time:</h6>
+                                        <p class="card-text">{{recipe.prepTime}} mins</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Cook Time:</h6>
+                                        <p class="card-text">{{recipe.cookTime}} mins</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Total Time:</h6>
+                                        <p class="card-text">{{recipe.totalTime}} mins</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Category:</h6>
+                                        <p class="card-text">{{recipe.category}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Serving Amount:</h6>
+                                        <p class="card-text">{{recipe.serving_amount}}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h6 class="card-title">Cook Time:</h6>
-                                <p class="card-text">{{recipe.cookTime}} mins</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                                <div class="card-body">
-                                    <h6 class="card-title">Total Time:</h6>
-                                    <p class="card-text">{{recipe.totalTime}} mins</p>
-                                </div>
-                        </div>
-
-                        <div class="col-md-4">
-
-                                <div class="card-body">
-                                    <h6 class="card-title">Category:</h6>
-                                    <p class="card-text">{{recipe.category}}</p>
-                                </div>
-
-                        </div>
-
-                        <div class="col-md-4">
-
-                                <div class="card-body">
-                                    <h6 class="card-title">Serving Amount:</h6>
-                                    <p class="card-text">{{recipe.serving_amount}}</p>
-                                </div>
-                        </div>
-                    </div>
-                </div><br>
-
-                    <h3><b>Ingredients:</b></h3>
+                        </div><br>
+                        <h3><b>Ingredients:</b></h3>
                         <ul>
                             {% for ingredient in recipe.ingredients.split('\n') if ingredient.strip()%}
                             <li>{{ ingredient.strip() }}</li>
                             {% endfor %}
                         </ul>
-                    <h3><b>Directions:</b></h3>
-                        <ol>
-                            {% for step in recipe.directions.split('\n') if step.strip() %}
+                        <h3><b>Directions:</b></h3>
+                            <ol>
+                                {% for step in recipe.directions.split('\n') if step.strip() %}
                                 {% set step_text = step|replace('^\\s*\\d+\\s*\\.', '')|trim %}
-                                    <li>{{ step.strip() }}</li>
-                            {% endfor %}
-                        </ol>
-                </div>
+                                <li>{{ step.strip() }}</li>
+                                {% endfor %}
+                            </ol>
             </div>
-
-    </body>
-</html>
+        </body>
+    </html>

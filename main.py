@@ -19,8 +19,6 @@ class Recipe(db.Model):
     totalTime = db.Column(db.Integer, nullable=False)
     summary = db.Column(db.Text, nullable=False)
 
-
-
     def __intit__(self, title, serving_amount, ingredients, directions, category, prepTime, cookTime, totalTime, summary):
         self.title = title
         self.serving_amount = serving_amount
@@ -31,9 +29,6 @@ class Recipe(db.Model):
         self.cookTime = cookTime
         self.totalTime = totalTime
         self.summary = summary
-#########################################################################################
-
-
 
 # Homepage Index.html
 @app.route("/")
@@ -138,6 +133,5 @@ def recipe_details(id):
     recipe = Recipe.query.get(id)
     return render_template('products/recipe_details.html', recipe=recipe)
 
-#########################################################################################
 if __name__ == '__main__':
     app.run(port=3003, host="localhost", debug=True)
