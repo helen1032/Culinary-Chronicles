@@ -32,7 +32,7 @@ images after the user added it.
 - *Recipe Categorization:* Recipes can be organized into categories to make the recipes easier to find.
 
 ## Software Architecture:
-![software.jpg](software.jpg)
+![software.jpg](diagram.png)
 - **_Home Page:_** The users will be taken directly to the homepage. Where the users will have the option to choose Categories, 
 Table of Contents, Contact Us, and Upload. This meets the usability requirement.
 - **_Categories:_** This tab will be a drop-down option where the user can choose between Breakfast, Lunch, Dinner, and Dessert. This meets the recipe categorization requirement.
