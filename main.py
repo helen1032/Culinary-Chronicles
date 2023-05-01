@@ -1,12 +1,9 @@
 from flask import Flask, abort, request, flash, redirect, send_from_directory, url_for, render_template, session
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:88c*02Hc@localhost/recipe_database'
 app.secret_key = "mysecret"
-app.config['UPLOAD_FOLDER'] = './uploads'
-app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png', 'gif'}
 db = SQLAlchemy(app)
 
 class Recipe(db.Model):
@@ -16,17 +13,24 @@ class Recipe(db.Model):
     serving_amount = db.Column(db.Integer, nullable=False)
     ingredients = db.Column(db.Text, nullable=False)
     directions = db.Column(db.Text, nullable=False)
-    category = db.Column(db.Enum('breakfast', 'lunch', 'dinner', 'dessert'), nullable=False)
-    photo_filename = db.Column(db.String(300), nullable=False)
+    category = db.Column(db.Enum('Breakfast', 'Lunch', 'Dinner', 'Dessert'), nullable=False)
+    prepTime = db.Column(db.Integer, nullable=False)
+    cookTime = db.Column(db.Integer, nullable=False)
+    totalTime = db.Column(db.Integer, nullable=False)
+    summary = db.Column(db.Text, nullable=False)
 
 
-    def __intit__(self, title, serving_amount, ingredients, directions, category, photo_filename):
+
+    def __intit__(self, title, serving_amount, ingredients, directions, category, prepTime, cookTime, totalTime, summary):
         self.title = title
         self.serving_amount = serving_amount
         self.ingredients = ingredients
         self.directions = directions
         self.category = category
-        self.photo_filename = photo_filename
+        self.prepTime = prepTime
+        self.cookTime = cookTime
+        self.totalTime = totalTime
+        self.summary = summary
 #########################################################################################
 
 
@@ -60,7 +64,11 @@ def add_recipe():
                 or not request.form['serving_amount'] \
                 or not request.form['ingredients'] \
                 or not request.form['directions'] \
-                or not request.form['category']:
+                or not request.form['category']\
+                or not request.form['prepTime']\
+                or not request.form['cookTime']\
+                or not request.form['totalTime']\
+                or not request.form['summary']:
             flash('Please enter all the fields', 'error')
         else:
             title = request.form['title']
@@ -68,24 +76,28 @@ def add_recipe():
             ingredients = request.form['ingredients']
             directions = request.form['directions']
             category = request.form['category']
-            photo_filename = request.files['photo_filename']
+            prepTime = request.form['prepTime']
+            cookTime = request.form['cookTime']
+            totalTime = request.form['totalTime']
+            summary = request.form['summary']
 
-            path = os.path.join(app.config['UPLOAD_FOLDER'], photo_filename.filename)
-            photo_filename.save(path)
 
             recipe = Recipe(title=title,
                             serving_amount=serving_amount,
                             ingredients=ingredients,
                             directions=directions,
                             category=category,
-                            photo_filename=photo_filename)
+                            prepTime=prepTime,
+                            cookTime=cookTime,
+                            totalTime=totalTime,
+                            summary=summary)
 
             db.session.add(recipe)
             db.session.commit()
             flash('Record was successfully added')
             return redirect(url_for('upload'))
 
-    categories = ['breakfast', 'lunch', 'dinner', 'dessert']
+    categories = ['Breakfast', 'Lunch', 'Dinner', 'Dessert']
     return render_template('upload/add_recipe.html', categories=categories)
 
 # Method to update any recipe
@@ -98,6 +110,10 @@ def update_recipe(id):
         recipe.ingredients = request.form['ingredients']
         recipe.directions = request.form['directions']
         recipe.category = request.form['category']
+        recipe.prepTime = request.form['prepTime']
+        recipe.cookTime = request.form['cookTime']
+        recipe.totalTime = request.form['totalTime']
+        recipe.summary = request.form['summary']
 
         db.session.commit()
 
@@ -121,15 +137,6 @@ def delete_recipe(id):
 def recipe_details(id):
     recipe = Recipe.query.get(id)
     return render_template('products/recipe_details.html', recipe=recipe)
-
-@app.template_filter('basename')
-def basename_filter(path):
-    return os.path.basename(path)
-
-@app.route('/uploads/<filename>')
-def displayImage(filename):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
-
 
 #########################################################################################
 if __name__ == '__main__':

@@ -29,7 +29,7 @@
                 <a class="nav-link disabled" aria-current="page" href="{{ url_for('index') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Categories</a>
+                <a class="nav-link disabled" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Meals</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="true">Add a Recipe</a>
@@ -41,36 +41,50 @@
           </div>
         </div>
       </nav>
-
     <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="card">
-          <div class="card-header">
-            <h4>Contact Us</h4>
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
+  <div class="row">
+    <div class="col-md-6">
+
+      <h2>Reach out to us!</h2>
+      <p>We love hearing from our users! If you have any questions,
+        feedback, or just want to say hello, please don't hesitate
+        to contact us. Whether you're a home cook looking to share
+        your favorite recipes or a foodie looking for inspiration,
+        our team is here to help.
+        <br>
+        You can reach us via email or
+        contact form. We're always happy to hear from our community
+        and look forward to connecting with you. So please feel free
+        to get in touch with us and let us know how we can make your
+        experience on our recipe sharing website even better.</p>
+      <h3>Our Team:</h3>
+      <ul>
+        <li>Giselle Cabrejos: <br><a href="gcabrejo@uncc.edu">gcabrejo@uncc.edu</a></li>
+        <li>Helen Cardoso: <br><a href="hcardoso@uncc.edu">hcardoso@uncc.edu</a></li>
+        <li>Ben Domeier: <br><a href="bdomeier@uncc.edu">bdomeier@uncc.edu</a></li>
+        <li>Andrea Martinez: <br><a href="amart247@uncc.edu">amart247@uncc.edu</a></li>
+        <li>Tyahna Tate: <br><a href="ttate17@uncc.edu">ttate17@uncc.edu</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6 mt-5">
+      <h3>Contact Us:</h3>
+      <form method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
         </div>
-      </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="concern">Your Message:</label>
+          <textarea class="form-control" id="concern" name="concern" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
-
+</div>
    </body>
 </html>

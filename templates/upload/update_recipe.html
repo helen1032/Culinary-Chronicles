@@ -23,22 +23,23 @@
          <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{ url_for('index') }}">Culinary Chronicles</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link disabled" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Categories</a>
+                    <a class="nav-link" href="{{ url_for('recipe_list') }}" tabindex="-1" aria-disabled="true">Meals</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="false">Add a Recipe</a>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('upload') }}" tabindex="-1" aria-disabled="false">Add a Recipe</a>
                   </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact_us') }}" tabindex="-1" aria-disabled="true">Contact Us</a>
                  </li>
                 </ul>
               </div>
@@ -48,34 +49,69 @@
 
      <!--Update an existing recipe-->
     <div class="container mt-5">
-        <h1>Edit a Recipe</h1>
+        <h1><b>Editing '{{data.title}}'</b></h1>
+        <p>Updating your recipe is simple! Just update any section where you want to  add additional features or delete a mistake. </p>
+        <hr>
             <form method="POST" action="{{ url_for('update_recipe', id=data.id) }}" enctype="multipart/form-data">
 
-                <label for="title">Recipe Title:</label><br>
+                <label for="title"><b>Recipe Title:</b></label><br>
                 <input type="text" name="title" id="title" value="{{data.title}}" placeholder="Enter your title here" required><br><br>
 
-                <label for="serving_amount">Serving(s):</label><br>
-                <input type="number" name="serving_amount" id="serving_amount" value="{{data.serving_amount}}" min="1" max="50"><br><br>
+                 <label for="summary"><b>Enter a description of your recipe:</b></label><br>
+                    <textarea rows="4" class="form-control" id="summary" name="summary" placeholder="Include a short description about your recipe! Share the story behind it or explain what makes it special." required>{{data.summary}}</textarea><br>
 
-                <label for="category">Category:</label><br>
-                <select name="category" id="category">
-                 <option value="Breakfast" {% if data.category =='Breakfast' %}selected{% endif %}>Breakfast</option>
-                 <option value="Lunch" {% if data.category =='Lunch' %}selected{% endif %}>Lunch</option>
-                 <option value="Dinner" {% if data.category =='Dinner' %}selected{% endif %}>Dinner</option>
-                 <option value="Dessert" {% if data.category =='Dessert' %}selected{% endif %}>Dessert</option>
-             </select><br><br>
-
-                <label for="ingredients">Ingredients:</label><br>
-                <textarea rows="4" class="form-control" name="ingredients" id="ingredients">{{data.ingredients}}</textarea>
-
-                <label for="directions">Directions:</label><br>
-                <textarea rows="4" class="form-control" name="directions" id="directions">{{data.directions}}</textarea><br>
-
-            <label for="photo_filename">Upload a Picture:</label><br>
-                <input type="file" id="photo_filename" name="photo_filename" accept="image/*"><br><br>
+                <hr>
 
 
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="category"><b>Category:</b></label><br>
+                                <select class="btn btn-secondary dropdown-toggle" name="category" id="category" required>
+                                    <option class="dropdown-item" value="Select a Category"> Select a Category</option>
+                                    <option class="dropdown-item" value="Breakfast" {% if data.category =='Breakfast' %}selected{% endif %}>Breakfast</option>
+                                    <option class="dropdown-item" value="Lunch" {% if data.category =='Lunch' %}selected{% endif %}>Lunch</option>
+                                    <option class="dropdown-item" value="Dinner" {% if data.category =='Dinner' %}selected{% endif %}>Dinner</option>
+                                    <option class="dropdown-item" value="Dessert" {% if data.category =='Dessert' %}selected{% endif %}>Dessert</option>
+                                 </select><br><br>
+                        </div>
 
+                        <div class="col-md-5">
+                            <label for="serving_amount"><b>Serving(s):</b></label><br>
+                            <input type="number" name="serving_amount" id="serving_amount" value="{{data.serving_amount}}" min="1" max="50" style="width: 100px;" placeholder="1~50 serv." required><br><br>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="prepTime"><b>Prep Time:</b></label><br>
+                             <input type="number" id="prepTime" name="prepTime" value="{{data.prepTime}}" min="1" max="200" style="width: 100px;" placeholder="e.g. 5 min" required><br><br>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="cookTime"><b>Cook Time:</b></label><br>
+                            <input type="number" id="cookTime" name="cookTime" value="{{data.cookTime}}" min="1" max="200" style="width: 100px;" placeholder="e.g. 7 min" required><br><br>
+                        </div>
+
+                         <div class="col-md-3">
+                            <label for="totalTime"><b>Total Time:</b></label><br>
+                            <input type="number" id="totalTime" name="totalTime" value="{{data.totalTime}}" min="1" max="200" style="width: 100px;" placeholder="e.g. 12 min" required><br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <label for="ingredients"><b>Ingredients:</b></label><br>
+                <p class="text-muted">Enter one ingredients per line and include the quantity (i.e. quarts, cups, teaspoons, etc...). Include any special preparation (i.e. chopped, sifted, etc...). You can include any brand names you use.</p>
+                <textarea rows="4" class="form-control" name="ingredients" id="ingredients" placeholder="e.g. 1 cup of sugar..." required>{{data.ingredients}}</textarea><br>
+
+                <label for="directions"><b>Directions:</b></label><br>
+                <p class="text-muted">Enter one step per line. Explain how to make your recipe, including backing or cooking, oven temperatures, pan sizes, etc...</p>
+                <textarea rows="4" class="form-control" name="directions" id="directions" placeholder="e.g. Preheat oven to 350 degrees...">{{data.directions}}</textarea><br>
+
+
+
+
+ <hr>
             <input class="btn btn-primary btn-sm" type="submit"  value="Update">
 
 

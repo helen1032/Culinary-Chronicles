@@ -10,7 +10,10 @@ CREATE TABLE recipes (
     ingredients TEXT NOT NULL,
     directions TEXT NOT NULL,
     category ENUM('breakfast', 'lunch', 'dinner', 'dessert') NOT NULL,
-    photo_filename TEXT NOT NULL,
+    summary TEXT NOT NULL,
+    prepTime INT NOT NULL,
+    cookTime INT NOT NULL,
+    totalTime INT NOT NULL,
     PRIMARY KEY (id)
 );
 
