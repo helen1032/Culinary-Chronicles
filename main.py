@@ -2,8 +2,8 @@ from flask import Flask, request, flash, redirect, url_for, render_template, ses
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:88c*02Hc@localhost/recipe_database'
-app.secret_key = "mysecret"
+app.config['SQLALCHEMY_DATABASE_URI'] = // Add your sql password and local host
+app.secret_key = // Create a secret key
 db = SQLAlchemy(app)
 
 class Recipe(db.Model):
